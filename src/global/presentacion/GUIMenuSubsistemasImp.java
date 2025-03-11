@@ -60,66 +60,55 @@ public class GUIMenuSubsistemasImp extends GUIMenuSubsistemas {
 					
 		PanelesButton.addActionListener(new ActionListener() { 
 			public void actionPerformed(ActionEvent e) {
-				
+				ControladorImp.getInstancia().accion(Eventos.SUB_PANELES, marco);
 			}
 		});
-		
 		PersonalButton.addActionListener(new ActionListener() { 
 			public void actionPerformed(ActionEvent e) {
-				
+				ControladorImp.getInstancia().accion(Eventos.SUB_PERSONAL, marco);
 			}
 		});
-		
 		EquipajeButton.addActionListener(new ActionListener() { 
 			public void actionPerformed(ActionEvent e) {
-				
+				ControladorImp.getInstancia().accion(Eventos.SUB_EQUIPAJE, marco);
 			}
 		});
-		
 		OperacionesButton.addActionListener(new ActionListener() { 
 			public void actionPerformed(ActionEvent e) {
-				
+				ControladorImp.getInstancia().accion(Eventos.SUB_OPERACIONES, marco);
 			}
 		});
-		
 		FinancieraButton.addActionListener(new ActionListener() { 
 			public void actionPerformed(ActionEvent e) {
-				
+				ControladorImp.getInstancia().accion(Eventos.SUB_FINANCIERA, marco);
 			}
 		});
-		
 		IncidenciasButton.addActionListener(new ActionListener() { 
 			public void actionPerformed(ActionEvent e) {
-				
+				ControladorImp.getInstancia().accion(Eventos.SUB_INCIDENCIAS, marco);
 			}
 		});
-		
 		LocalesButton.addActionListener(new ActionListener() { 
 			public void actionPerformed(ActionEvent e) {
-				
+				ControladorImp.getInstancia().accion(Eventos.SUB_LOCALES, marco);
 			}
 		});
-		
 		EstacionamientoButton.addActionListener(new ActionListener() { 
 			public void actionPerformed(ActionEvent e) {
-				
+				ControladorImp.getInstancia().accion(Eventos.SUB_ESTACIONAMIENTO, marco);
 			}
 		});
-		
 		VuelosButton.addActionListener(new ActionListener() { 
 			public void actionPerformed(ActionEvent e) {
-				marco.setVisible(false);
-				vuelos.presentacion.GUIMenuCUsImp menu = (vuelos.presentacion.GUIMenuCUsImp) vuelos.presentacion.GUIMenuCUs.getInstancia();
-				JFrame menuFrame = menu.getFrame();
-				menuFrame.setVisible(true);
+				ControladorImp.getInstancia().accion(Eventos.SUB_VUELOS, marco);
 			}
 		});
-		
 		SeguridadButton.addActionListener(new ActionListener() { 
 			public void actionPerformed(ActionEvent e) {
-				
+				ControladorImp.getInstancia().accion(Eventos.SUB_SEGURIDAD, marco);
 			}
 		});
+
 		
 		marco.setVisible(true);
 	}

@@ -3,6 +3,7 @@ package global.presentacion;
 import java.awt.event.ActionListener;
 import java.util.HashMap;
 
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 import global.negocio.FactoriaSA;
@@ -14,33 +15,112 @@ public class ControladorImp extends Controlador {
 	
 	
 	public void accion(int evento, Object datos)	{
-		switch (evento){
-		case (Eventos.CLIENTES_SUMAR): 
-		{
-			HashMap<String, String> ids= (HashMap<String, String>) datos;
-			Float id1= new Float(ids.get("id1"));
-			Float id2= new Float(ids.get("id2"));
+		switch (evento) {
+		case (Eventos.SUB_PANELES): {
+			JFrame marco = (JFrame) datos;
 			
-			//creamos el servicio de aplicaci�n de la capa de negocio
-			SAClientes saClientes=  FactoriaSA.getInstancia().nuevoSAClientes();
-			//delego la tarea en el SA de capa de negocio (en este caso sumar)
-			Float resultado= saClientes.sumar(id1, id2);
-			
-			if (resultado ==-1) 
-				JOptionPane.showMessageDialog(null, "No se encontr� a alg�n empleado");
-			else 
-				JOptionPane.showMessageDialog(null, "El resultado es: "+resultado);
-			
-			GUIClientes.getInstancia().actualizar(Eventos.CLIENTES_LIMPIAR, null);
+			marco.setVisible(false);
+            paneles.presentacion.CUs.GUIMenuCUsImp menu = (paneles.presentacion.CUs.GUIMenuCUsImp) paneles.presentacion.CUs.GUIMenuCUs.getInstancia();
+			JFrame menuFrame = menu.getFrame();
+			menuFrame.setVisible(true);
 			break;
-						}
-		case (Eventos.CAMPOS_VACIOS): {
-			
-			JOptionPane.showMessageDialog(null, "Alg�n campo est� vacio");
-			GUIClientes.getInstancia().actualizar(Eventos.CLIENTES_LIMPIAR, null);
-			
 		}
-		default: { GUIClientes.getInstancia().actualizar(Eventos.CLIENTES_LIMPIAR, null); break; }
+
+		case (Eventos.SUB_PERSONAL): {
+			JFrame marco = (JFrame) datos;
+			
+			marco.setVisible(false);
+            personal.presentacion.CUs.GUIMenuCUsImp menu = (personal.presentacion.CUs.GUIMenuCUsImp) personal.presentacion.CUs.GUIMenuCUs.getInstancia();
+			JFrame menuFrame = menu.getFrame();
+			menuFrame.setVisible(true);
+			break;
+		}
+
+		case (Eventos.SUB_EQUIPAJE): {
+			JOptionPane.showMessageDialog(null, "Aun no esta implementado!");
+//			JFrame marco = (JFrame) datos;
+//			
+//			marco.setVisible(false);
+//            equipaje.presentacion.GUIMenuCUsImp menu = (equipaje.presentacion.GUIMenuCUsImp) equipaje.presentacion.GUIMenuCUs.getInstancia();
+//			JFrame menuFrame = menu.getFrame();
+//			menuFrame.setVisible(true);
+			break;
+		}
+
+		case (Eventos.SUB_OPERACIONES): {
+			JFrame marco = (JFrame) datos;
+			
+			marco.setVisible(false);
+            operaciones.presentacion.GUIMenuCUsImp menu = (operaciones.presentacion.GUIMenuCUsImp) operaciones.presentacion.GUIMenuCUs.getInstancia();
+			JFrame menuFrame = menu.getFrame();
+			menuFrame.setVisible(true);
+			break;
+		}
+
+		case (Eventos.SUB_FINANCIERA): {
+			JFrame marco = (JFrame) datos;
+			
+			marco.setVisible(false);
+            financiera.presentacion.CUs.GUIMenuCUsImp menu = (financiera.presentacion.CUs.GUIMenuCUsImp) financiera.presentacion.CUs.GUIMenuCUs.getInstancia();
+			JFrame menuFrame = menu.getFrame();
+			menuFrame.setVisible(true);
+			break;
+		}
+
+		case (Eventos.SUB_INCIDENCIAS): {
+			JFrame marco = (JFrame) datos;
+			
+			marco.setVisible(false);
+            incidencias.presentacion.CUs.GUIMenuCUsImp menu = (incidencias.presentacion.CUs.GUIMenuCUsImp) incidencias.presentacion.CUs.GUIMenuCUs.getInstancia();
+			JFrame menuFrame = menu.getFrame();
+			menuFrame.setVisible(true);
+			break;
+		}
+
+		case (Eventos.SUB_LOCALES): {
+			JFrame marco = (JFrame) datos;
+			
+			marco.setVisible(false);
+            locales.presentacion.CUs.GUIMenuCUsImp menu = (locales.presentacion.CUs.GUIMenuCUsImp) locales.presentacion.CUs.GUIMenuCUs.getInstancia();
+			JFrame menuFrame = menu.getFrame();
+			menuFrame.setVisible(true);
+			break;
+		}
+
+		case (Eventos.SUB_ESTACIONAMIENTO): {
+			JFrame marco = (JFrame) datos;
+			
+			marco.setVisible(false);
+            estacionamiento.presentacion.GUIMenuCUsImp menu = (estacionamiento.presentacion.GUIMenuCUsImp) estacionamiento.presentacion.GUIMenuCUs.getInstancia();
+			JFrame menuFrame = menu.getFrame();
+			menuFrame.setVisible(true);
+			break;
+		}
+
+		case (Eventos.SUB_VUELOS): {
+			JFrame marco = (JFrame) datos;
+			
+			marco.setVisible(false);
+            vuelos.presentacion.GUIMenuCUsImp menu = (vuelos.presentacion.GUIMenuCUsImp) vuelos.presentacion.GUIMenuCUs.getInstancia();
+			JFrame menuFrame = menu.getFrame();
+			menuFrame.setVisible(true);
+			break;
+		}
+
+		case (Eventos.SUB_SEGURIDAD): {
+			JOptionPane.showMessageDialog(null, "Aun no esta implementado!");
+//			JFrame marco = (JFrame) datos;
+//			
+//			marco.setVisible(false);
+//            seguridad.presentacion.GUIMenuCUsImp menu = (seguridad.presentacion.GUIMenuCUsImp) seguridad.presentacion.GUIMenuCUs.getInstancia();
+//			JFrame menuFrame = menu.getFrame();
+//			menuFrame.setVisible(true);
+			break;
+		}
+
+			default: {
+				GUIClientes.getInstancia().actualizar(Eventos.CLIENTES_LIMPIAR, null); break;
+			}
 		}
 	}
 	

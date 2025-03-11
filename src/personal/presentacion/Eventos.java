@@ -2,10 +2,11 @@ package personal.presentacion;
 
 public class Eventos {
 
-	final static public int CLIENTES_SUMAR= 10;
-	final static public int CLIENTES_SUMAR_RESULTADO= 11;
-	final static public int CLIENTES_LIMPIAR= 12;
-	final static public int CAMPOS_VACIOS= 13;
+	final static public int ASIGNACION = 10;
+	final static public int MOSTRARLISTA= 11;
+	final static public int CREARNOMINA= 12;
+	final static public int ANADIRELIMINAR= 13;
+	final static public int GENERARINFORME= 14;
 
 }
 
