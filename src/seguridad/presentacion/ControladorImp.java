@@ -15,33 +15,42 @@ public class ControladorImp extends Controlador {
 	
 	public void accion(int evento, Object datos)	{
 		switch (evento){
-		case (Eventos.CLIENTES_SUMAR): 
-		{
-			HashMap<String, String> ids= (HashMap<String, String>) datos;
-			Float id1= new Float(ids.get("id1"));
-			Float id2= new Float(ids.get("id2"));
-			
-			//creamos el servicio de aplicaci�n de la capa de negocio
-			SAClientes saClientes=  FactoriaSA.getInstancia().nuevoSAClientes();
-			//delego la tarea en el SA de capa de negocio (en este caso sumar)
-			Float resultado= saClientes.sumar(id1, id2);
-			
-			if (resultado ==-1) 
-				JOptionPane.showMessageDialog(null, "No se encontr� a alg�n empleado");
-			else 
-				JOptionPane.showMessageDialog(null, "El resultado es: "+resultado);
-			
-			GUIClientes.getInstancia().actualizar(Eventos.CLIENTES_LIMPIAR, null);
+		case(Eventos.ACEPTAR_CAMBIOS):{
 			break;
-						}
-		case (Eventos.CAMPOS_VACIOS): {
-			
-			JOptionPane.showMessageDialog(null, "Alg�n campo est� vacio");
-			GUIClientes.getInstancia().actualizar(Eventos.CLIENTES_LIMPIAR, null);
+		}
+		case(Eventos.CANCELAR_CAMBIOS):{
+			break;
+		}
+		case(Eventos.CREAR_ACCESO):{
+			break;
+		}
+		case(Eventos.VOLVER_MENU):{
+			break;
+		}
+		case(Eventos.ELIMINAR_ACCESO):{
+			break;
+		}
+		case(Eventos.MODIFICAR_ACCESO):{
+			break;
+		}
+		case(Eventos.VERIFICAR_ACCESO):{
+			break;
+		}
+		case(Eventos.ACTIVAR_DISPOSITIVO):{
+			break;
+		}
+		case(Eventos.DESACTIVAR_DISPOSITIVO):{
+			break;
+		}
+		case(Eventos.CONFIGURAR_DISPOSITIVO):{
+			break;
+		}
+		case(Eventos.CONSULTAR_HISTORIAL):{
+			break;
+		}
 			
 		}
-		default: { GUIClientes.getInstancia().actualizar(Eventos.CLIENTES_LIMPIAR, null); break; }
-		}
+
 	}
 	
 

@@ -37,13 +37,12 @@ public class ControladorImp extends Controlador {
 		}
 
 		case (Eventos.SUB_EQUIPAJE): {
-			JOptionPane.showMessageDialog(null, "Aun no esta implementado!");
-//			JFrame marco = (JFrame) datos;
-//			
-//			marco.setVisible(false);
-//            equipaje.presentacion.GUIMenuCUsImp menu = (equipaje.presentacion.GUIMenuCUsImp) equipaje.presentacion.GUIMenuCUs.getInstancia();
-//			JFrame menuFrame = menu.getFrame();
-//			menuFrame.setVisible(true);
+			JFrame marco = (JFrame) datos;
+			
+			marco.setVisible(false);
+            equipaje.presentacion.GUIMenuCUsImp menu = (equipaje.presentacion.GUIMenuCUsImp) equipaje.presentacion.GUIMenuCUs.getInstancia();
+			JFrame menuFrame = menu.getFrame();
+			menuFrame.setVisible(true);
 			break;
 		}
 
@@ -108,13 +107,12 @@ public class ControladorImp extends Controlador {
 		}
 
 		case (Eventos.SUB_SEGURIDAD): {
-			JOptionPane.showMessageDialog(null, "Aun no esta implementado!");
-//			JFrame marco = (JFrame) datos;
-//			
-//			marco.setVisible(false);
-//            seguridad.presentacion.GUIMenuCUsImp menu = (seguridad.presentacion.GUIMenuCUsImp) seguridad.presentacion.GUIMenuCUs.getInstancia();
-//			JFrame menuFrame = menu.getFrame();
-//			menuFrame.setVisible(true);
+			JFrame marco = (JFrame) datos;
+			
+			marco.setVisible(false);
+            seguridad.presentacion.CUs.GUIMenuCUsImp menu = (seguridad.presentacion.CUs.GUIMenuCUsImp) seguridad.presentacion.CUs.GUIMenuCUs.getInstancia();
+			JFrame menuFrame = menu.getFrame();
+			menuFrame.setVisible(true);
 			break;
 		}
 

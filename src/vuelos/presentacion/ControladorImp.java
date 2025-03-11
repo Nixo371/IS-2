@@ -4,7 +4,6 @@ import javax.swing.JOptionPane;
 
 public class ControladorImp extends Controlador {
 	
-	
 	public void accion(int evento, Object datos) {
 		switch (evento) {
 			case Eventos.CREAR_VUELO: {
@@ -32,11 +31,7 @@ public class ControladorImp extends Controlador {
 				break;
 			}
 			default: {
-				GUIClientes.getInstancia().actualizar(Eventos.CLIENTES_LIMPIAR, null);
-				break;
 			}
 		}
 	}
-	
-
 }
