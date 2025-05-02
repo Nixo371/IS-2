@@ -2,9 +2,14 @@
 /bin/
 /target/
 
+# Eclipse is cancer
+/.metadata/
+/.settings/
+
 # Ignore compiled Java files
 *.class
 
 # Ignore OS-specific files
 .DS_Store
-Thumbs.db
+*.log
+*.tmp
